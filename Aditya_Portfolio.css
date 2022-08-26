@@ -4,20 +4,36 @@
 
 
 /* Website Text CSS */
+@font-face {
+  font-family: miki-regular;
+  src: url("miki/KontrapunktMiki-Regular.otf");
+}
+
+@font-face {
+  font-family: miki-bold;
+  src: url("miki/KontrapunktMiki-Bold.otf");
+}
+
+@font-face {
+  font-family: miki-extra-bold;
+  src: url("miki/KontrapunktMiki-ExtraBold.otf");
+}
+
 .main-header {
   color: #094067;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: miki-extra-bold;
 }
 
 .secondary-header {
   color: #5f6c7b;
   font-size: 24px;
-  font-family: Apercu;
+  font-family: miki-bold;
 }
 
 .paragraph-text {
   font-size: 18px;
   color: #5f6c7b;
+  font-family: miki-regular;
 }
 
 .rotate-text {
@@ -28,6 +44,7 @@
 
 .highlight-text-blue {
   color: #3da9fc;
+  font-family: miki-bold;
 }
 
 .highlight-text-red {
@@ -119,6 +136,7 @@
   right: 46.5%;
   bottom: -105px;
   padding-left: 0px;
+  transform: scale(0.7);
 }
 
 .body {
@@ -131,11 +149,4 @@
   line-height: 1.5;
   text-align: left;
   text-decoration: none;
-}
-
-.body.case-studies {
-  width: auto;
-  height: 100%;
-  transform: rotate(90deg) rotate(0deg);
-  color: #7f5af0;
 }
