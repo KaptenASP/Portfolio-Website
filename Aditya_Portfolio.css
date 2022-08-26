@@ -1,0 +1,141 @@
+/* 
+  COLOUR PALETTE FROM https://www.happyhues.co/palettes/1 
+*/
+
+
+/* Website Text CSS */
+.main-header {
+  color: #094067;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.secondary-header {
+  color: #5f6c7b;
+  font-size: 24px;
+  font-family: Apercu;
+}
+
+.paragraph-text {
+  font-size: 18px;
+  color: #5f6c7b;
+}
+
+.rotate-text {
+  width: auto;
+  height: 100%;
+  transform: rotate(90deg) rotate(0deg);
+}
+
+.highlight-text-blue {
+  color: #3da9fc;
+}
+
+.highlight-text-red {
+  color: #ef4565;
+}
+
+.link-text {
+  text-decoration: none;
+}
+
+.view-projects-button {
+  position: relative;
+  left: 8%;
+  top: 189px;
+  bottom: -285px;
+  display: flex;
+  width: 11%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Website color css */
+.main-bk-color {
+  background-color: #fffffe;
+}
+
+.secondary-bk-color {
+  background-color: #d8eefe;
+}
+
+/* Website layout css */
+.homepage-main {
+    display: flex;
+    height: 900px;
+    margin-bottom: 0px;
+    justify-content: flex-start;
+    align-items: center;
+    /* border-bottom: 1.5px solid #000; */
+}
+
+.left-side-bar {
+  position: absolute;
+  display: flex;
+  width: 12%;
+  height: 900px;
+  flex-direction: column;
+  border: 1.5px none #000;
+}
+
+.homepage-main-info {
+  position: relative;
+  top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-info-container {
+    margin-left:auto;
+    margin-right:auto;
+    max-width:940px
+}
+
+.homepage-secondary-info {
+  display: grid;
+  position: relative;
+  left: 28px;
+  top: -72px;
+  grid-row-gap: 15px;
+  grid-template-columns: 1fr;
+}
+
+.homepage-tertiary-info {
+  position: relative;
+  display: flex;
+}
+
+.homepage-rectangle-aesthetic {
+  position: relative;
+  z-index: -2;
+  transform: scale(1.2);
+}
+
+.down-arrow {
+  position: absolute;
+  left: auto;
+  right: 46.5%;
+  bottom: -105px;
+  padding-left: 0px;
+}
+
+.body {
+  width: auto;
+  height: auto;
+  transform: rotate(0deg);
+  font-family: Apercu, sans-serif;
+  color: #000;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: left;
+  text-decoration: none;
+}
+
+.body.case-studies {
+  width: auto;
+  height: 100%;
+  transform: rotate(90deg) rotate(0deg);
+  color: #7f5af0;
+}
