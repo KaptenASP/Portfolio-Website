@@ -1,8 +1,3 @@
-/* 
-  COLOUR PALETTE FROM https://www.happyhues.co/palettes/1 
-*/
-
-
 /* Website Text CSS */
 @font-face {
   font-family: miki-regular;
@@ -19,20 +14,24 @@
   src: url("miki/KontrapunktMiki-ExtraBold.otf");
 }
 
+.centre-text {
+  text-align: center;
+}
+
 .main-header {
-  color: #094067;
+  color: #E9D8A6;
   font-family: miki-extra-bold;
 }
 
 .secondary-header {
-  color: #5f6c7b;
+  color: #b5a881;
   font-size: 24px;
   font-family: miki-bold;
 }
 
 .paragraph-text {
   font-size: 18px;
-  color: #5f6c7b;
+  color: #fff6b5;
   font-family: miki-regular;
 }
 
@@ -42,8 +41,8 @@
   transform: rotate(90deg) rotate(0deg);
 }
 
-.highlight-text-blue {
-  color: #3da9fc;
+.highlight-text-white {
+  color: #e8e7ee;
   font-family: miki-bold;
 }
 
@@ -53,6 +52,10 @@
 
 .link-text {
   text-decoration: none;
+}
+
+#links-page {
+  color: white;
 }
 
 .view-projects-button {
@@ -79,25 +82,16 @@
 /* Website layout css */
 .homepage-main {
     display: flex;
-    height: 900px;
-    margin-bottom: 0px;
-    justify-content: flex-start;
+    /* height: 100%; */
+    width: auto;
+    margin-top: 30%;
+    margin-left: 30%;
+    justify-content: center;
     align-items: center;
     /* border-bottom: 1.5px solid #000; */
 }
 
-.left-side-bar {
-  position: absolute;
-  display: flex;
-  width: 12%;
-  height: 900px;
-  flex-direction: column;
-  border: 1.5px none #000;
-}
-
 .homepage-main-info {
-  position: relative;
-  top: 30px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -112,9 +106,8 @@
 
 .homepage-secondary-info {
   display: grid;
-  position: relative;
-  left: 28px;
-  top: -72px;
+  position: absolute;
+  width: 500px;
   grid-row-gap: 15px;
   grid-template-columns: 1fr;
 }
@@ -142,11 +135,13 @@
 .body {
   width: auto;
   height: auto;
-  transform: rotate(0deg);
   font-family: Apercu, sans-serif;
   color: #000;
-  font-size: 18px;
-  line-height: 1.5;
-  text-align: left;
-  text-decoration: none;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+}
+
+.absolute {
+  position: absolute;
 }
