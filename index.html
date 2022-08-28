@@ -5,6 +5,75 @@
         <title>Aditya Agnihotri Portfolio Website</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
+        <script type="module">
+            // Importing the Three.js library
+            import * as THREE from "https://unpkg.com/three@0.143.0/build/three.module.js";
+            import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js';
+
+            // Setting up the scene
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(90, innerWidth/innerHeight, 0.1, 1000);
+            camera.position.z = 5;
+
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setClearColor( 0x001219, 1 );
+            renderer.setSize(innerWidth, innerHeight);
+            renderer.setPixelRatio(devicePixelRatio);
+            document.body.appendChild(renderer.domElement);
+
+            const front_light = new THREE.DirectionalLight(0xffffff, 1);
+            front_light.position.set(0, 0, 1);
+
+            const rear_light = new THREE.DirectionalLight(0xffffff, 1);
+            rear_light.position.set(0, 0, -1);
+
+            function AddCubes(a, b, c) {
+                // Creating all the cubes:
+                let lst = [0x005F73, 0x0A9396, 0x94D2BD, 0xE9D8A6, 0xEE9B00, 0xCA6702, 0xBB3E03, 0xAE2012, 0x9B2226];
+
+                for (let i = 0; i < 100; i++) {
+                    const cubeGeometery = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+                    const cubeMaterial = new THREE.MeshPhongMaterial({color:lst[Math.floor(Math.random() * lst.length)]});
+                    const cubeMesh = new THREE.Mesh(cubeGeometery, cubeMaterial);
+                    cubeMesh.rotation.x = Math.random();
+                    cubeMesh.rotation.y = Math.random();
+                    cubeMesh.rotation.z = Math.random();
+                    cubeMesh.position.set(a * Math.random() * 30, b * Math.random() * 30, c * Math.random() * 30)
+                    scene.add(cubeMesh);
+                }
+            }
+
+            AddCubes(1, 1, 1);
+            
+            for (let x = -1; x <= 1; x++) {
+                for (let y = -1; y <= 1; y++) {
+                    for (let z = -1; z <= 1; z++) {
+                        if (x == 0 || y == 0 || z == 0) continue;
+                        AddCubes(x, y, z);
+                    }
+                }
+            }
+
+            new OrbitControls(camera, renderer.domElement);
+
+            
+            scene.add(front_light);
+            scene.add(rear_light);
+            
+
+            function animate () {
+                requestAnimationFrame(animate);
+                camera.rotation.x += 0.001;
+                camera.rotation.y += 0.001;
+                camera.rotation.z += 0.001;
+                renderer.render(scene, camera);
+              }
+              
+              animate();
+        </script>
+
+
+
         <script src="scripts/typewrite.js"></script> 
 
         <link href="Aditya_Portfolio.css" rel="stylesheet">
@@ -13,20 +82,7 @@
     </head>
     <body class="main-bk-color">
         <!-- Main part of the home page -->
-        <div class="homepage-main">
-
-            <!-- Left sidebar for decorative purposes -->
-            <div class="secondary-bk-color left-side-bar"></div>
-
-            <!-- Button to view projects below -->
-            <div class="view-projects-button">
-                <!-- Arrow -->
-                <img src="Aditya_Website_Files/down_arrow.png" loading="lazy" alt="" class="down-arrow" width="16">
-                <!-- Text -->
-                <div class="rotate-text paragraph-text">
-                    <a class="highlight-text-blue link-text" href="#"><strong>View Projects</strong></a>
-                </div>
-            </div>
+        <div class="homepage-main absolute">
 
             <!-- Container to display name, links and bio -->
             <div class="secondary-bk-color main-info-container">
@@ -40,32 +96,28 @@
                         
                         <!-- Display Bio -->
                         <div class="secondary-header">
-                            <p>Computer Science Student at <strong class="highlight-text-blue">UNSW</strong> sydney <br></p>
+                            <p>Computer Science Student at <strong class="highlight-text-white">UNSW</strong> sydney <br></p>
                             <p>with a passion for 
-                                <a href="" class="link-text highlight-text-blue typewrite" data-period="2000" data-type='["Technology", "Finance", "Cyber-Security"]''></a>
+                                <a href="" class="link-text highlight-text-white typewrite" data-period="2000" data-type='["Technology", "Finance", "Cyber-Security"]''></a>
                             </p>
                         </div>
 
                         <!-- Links to different websites -->
                         <ul class="nav justify-content-left paragraph-text">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="mailto:adityaagni10@gmail.com?subject=Hello!%20">Mail</a>
+                            <li class="nav-item highlight-text-white">
+                                <a class="nav-link active " aria-current="page" id="links-page" href="mailto:adityaagni10@gmail.com?subject=Hello!%20">Mail</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="https://www.linkedin.com/in/adityaagni10/">Linkedin</a>
+                                <a class="nav-link active" aria-current="page" id="links-page" href="https://www.linkedin.com/in/adityaagni10/">Linkedin</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="https://github.com/KaptenASP">Github</a>
+                                <a class="nav-link active" aria-current="page" id="links-page" href="https://github.com/KaptenASP">Github</a>
                             </li>
 
                         </ul>
 
-                    </div>
-
-                    <div class="homepage-tertiary-info">
-                        <img src="Aditya_Website_Files/HomePageBorder.svg" loading="lazy" alt="" class="homepage-rectangle-aesthetic" width="320">
                     </div>
                 </div>
             </div>
